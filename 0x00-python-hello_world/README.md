@@ -1,0 +1,1 @@
+This project is about entry level task for python 3.4 scripts and interpreter. Every task will be in a separate commit, then the purpose of each task will be esplained in the commit.
