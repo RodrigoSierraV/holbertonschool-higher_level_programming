@@ -1,0 +1,1 @@
+This project is about if and if else statements, for and while loops at an entry level to python. Each function will have a commit which will explain its purpose.
