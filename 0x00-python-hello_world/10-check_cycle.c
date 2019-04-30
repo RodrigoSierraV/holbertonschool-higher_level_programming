@@ -11,6 +11,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *current = (listint_t *)list, *fast = (listint_t *)list;
 
+	if (list == NULL)
+		return (0);
 	if (find((listint_t *)list, current, fast))
 		return (1);
 	return (0);
