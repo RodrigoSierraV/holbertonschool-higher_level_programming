@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
+listint_t find(listint_t *head, listint_t *current, listint_t *fast);
+/**
+ * print_listint - prints all elements of a listint_t list
+ * @h: pointer to head of list
+ * Return: number of nodes
+ */
+int check_cycle(listint_t *list)
+
+	listint_t *current = list, *fast = list;
+
+	if (find(list, current, fast))
+		return (1);
+	return(0);
+}
+/**
+ * find - finds a loop in a linked list.
+ * @head: pointer to the given listint.
+ * @current: pointer to the given listint.
+ * @fast: pointer to the given listint.
+ *
+ * Return: The address of the node where
+ * the loop starts, or NULL if there is no loop.
+ */
+listint_t find(listint_t *head, listint_t *current, listint_t *fast)
+{
+	while (current && fast && fast->next)
+	{
+		current = current->next;
+		fast = fast->next->next;
+		if (current == fast)
+		{
+			if (current != head)
+			{
+				head = head->next;
+				current = head;
+				fast = head;
+				find(head, current, fast);
+			}
+			else
+			{
+				return (head);
+			}
+		}
+	}
+	return (head);
+}
