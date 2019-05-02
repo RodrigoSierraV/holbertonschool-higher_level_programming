@@ -1,0 +1,1 @@
+This project is about importing functions, create modules, the use of dir() built-in, how to guard your code and the use of command line arguments in Python. Each program will have a commit with the explanation of its purpose.
