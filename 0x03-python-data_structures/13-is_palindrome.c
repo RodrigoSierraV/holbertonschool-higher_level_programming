@@ -3,9 +3,9 @@
 #include "lists.h"
 
 /**
- * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * is_palindrome - prints all elements of a listint_t list
+ * @head:pointer to head of list
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
 int is_palindrome(listint_t **head)
 {
@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 	int i = 0, len = 0, step = 0, beg = 0, comp = 0;
 
 	if (!*head)
-		return(1);
+		return (1);
 	while (aux)
 	{
 		len++;
