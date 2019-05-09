@@ -1,0 +1,1 @@
+This project is about Data structures in Python, Lambda operator, map function, filtering and reducing a list. Each function will have a commit to explain its purpose.This project is about Data structures in Python, Lambda operator, map function, filtering and reducing a list. Each function will have a commit to explain its purpose.
