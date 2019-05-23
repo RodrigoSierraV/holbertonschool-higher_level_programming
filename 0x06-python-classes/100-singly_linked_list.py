@@ -35,7 +35,7 @@ class SinglyLinkedList:
         if not self.__head:
             self.__head = new
             return
-        if new.data < self.__head.data:
+        if new.data <= self.__head.data:
             new.next_node = self.__head
             self.__head = new
             return
