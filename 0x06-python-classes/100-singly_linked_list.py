@@ -11,7 +11,7 @@ class Node:
     @data.setter
     def data(self, value):
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
@@ -54,6 +54,7 @@ class SinglyLinkedList:
             b += 1
         new.next_node = current
         before.next_node = new
+        current = self.__head
 
     def __str__(self):
         llist = ""
