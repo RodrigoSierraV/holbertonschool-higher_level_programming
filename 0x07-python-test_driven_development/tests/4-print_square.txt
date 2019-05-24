@@ -1,0 +1,87 @@
+#doctests for function def print_square(size)
+
+import function
+
+>>> square = __import__('4-print_square').print_square
+
+case 0: empty size
+
+>>> square()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+case 1: size inside parenthesis
+
+>>> square((6))
+######
+######
+######
+######
+######
+######
+
+case 2: size inside a list
+
+>>> square([6])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 15, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+case 3: passing a letter as size
+
+>>> square(z)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'z' is not defined
+
+case 4: size in a tuple
+
+>>> square((2,0))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 15, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+case 5: size as dictionary
+
+>>> square({'size': 2})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 15, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+case 6: size surrounded by spaces
+
+>>> square(     5          )
+#####
+#####
+#####
+#####
+#####
+
+case 7: size is a math operation
+
+>>> square(5*2)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+case 8: two arguments
+
+>>> square(5,2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_square() takes 1 positional argument but 2 were given
+
