@@ -1,0 +1,95 @@
+#doctest for function add_integer(a, b=98)
+
+to import module
+
+>>> add = __import__('0-add_integer').add_integer
+
+case 1: no argument passed
+
+>>> add()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+case 2: argument surrounded by parenthesis
+
+>>> add((2))
+100
+
+case 3: argument a plus spaces
+
+>>> add(    2              )
+100
+
+case 4: passing a list with one member as argument a
+
+>>> add([3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 12, in add_integer
+    raise TypeError('a must be an integer')
+TypeError: a must be an integer
+
+case 5: passing a list with two member as argument a
+
+>>> add([3, 3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 12, in add_integer
+    raise TypeError('a must be an integer')
+TypeError: a must be an integer
+
+case 6: passing a list with one member as argument b
+
+>>> add(2, [3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 14, in add_integer
+    raise TypeError('b must be an integer')
+TypeError: b must be an integer
+
+case 7: passing a list with two member as argument
+
+>>> add(2, [3, 3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 14, in add_integer
+    raise TypeError('b must be an integer')
+TypeError: b must be an integer
+
+case 8: passing a set with one member as argument a
+
+>>> add({3})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 12, in add_integer
+    raise TypeError('a must be an integer')
+TypeError: a must be an integer
+
+case 9: passing a set with two members as argument a
+
+>>> add({3, 2})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 12, in add_integer
+    raise TypeError('a must be an integer')
+TypeError: a must be an integer
+
+case 10: passing a big number
+
+>>> add(1e200)
+99999999999999996973312221251036165947450327545502362648241750950346848435554075534196338404706251868027512415973882408182135734368278484639385041047239877871023591066789981811181813306167128854888546
+
+case 11: passing a bigger number
+
+>>> add(1e1000)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+OverflowError: cannot convert float infinity to integer
+
+case 12: passing a small float
+
+>>> add(2.33e-1000)
+98

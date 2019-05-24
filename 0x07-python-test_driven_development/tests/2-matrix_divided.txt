@@ -1,0 +1,70 @@
+#doctest for function matrix_divided(matrix, div)
+
+import of module
+
+>>> mat = __import__('2-matrix_divided').matrix_divided
+
+case 0: div is a very small number
+
+>>> mat([[2,3],[(5), 4]], 3.6e-10000)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 26, in matrix_divided
+    newmatrix = [[round(y / div, 2) for y in i] for i in matrix]
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 26, in <listcomp>
+    newmatrix = [[round(y / div, 2) for y in i] for i in matrix]
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 26, in <listcomp>
+    newmatrix = [[round(y / div, 2) for y in i] for i in matrix]
+ZeroDivisionError: float division by zero
+
+case 1: no arguments
+
+>>> mat()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+case 2: sending a list of integers
+
+>>> mat([2,3], 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 19, in matrix_divided
+    'matrix must be a matrix (list of lists) of integers/floats')
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case 3: a charater within matrix
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 'a', 6]
+... ]
+>>> mat(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 23, in matrix_divided
+    'matrix must be a matrix (list of lists) of integers/floats')
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case 4: passing a big number
+
+>>> mat([[2,3],[999999999999999999999999999999999,  2]], 3)
+[[0.67, 1.0], [3.3333333333333336e+32, 0.67]]
+
+case 5: passing a negative number
+
+>>> mat([[2,3],[5, 4]], -5)
+[[-0.4, -0.6], [-1.0, -0.8]]
+
+case 6: one member of matrix is a math operation
+
+>>> mat([[2,3],[5+4, 4]], 3)
+[[0.67, 1.0], [3.0, 1.33]]
+
+case 7: no div
+
+>>> mat([[2,3],[5+4, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+

@@ -1,0 +1,49 @@
+#doctest for function say_my_name(first_name, last_name="")
+
+import function
+
+>>> name = __import__('3-say_my_name').say_my_name
+
+case 1: no first name
+
+>>> name()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+case 2: first name inside a set
+
+>>> name({'Falcao'})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 4, in say_my_name
+    raise TypeError('first_name must be a string')
+TypeError: first_name must be a string
+
+case 3: str operation inside name
+
+>>> name("Ja"+"mes", 'Rodriguez')
+My name is James Rodriguez
+
+case 4: name inside a dictionary
+
+>>> name({'Falcao': 'Garcia'})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 4, in say_my_name
+    raise TypeError('first_name must be a string')
+TypeError: first_name must be a string
+
+case 5: passing a name without quotes
+
+>>> name(Falcao)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Falcao' is not defined
+
+case 6: Passing last name without quotes
+
+>>> name('Falcao', Garcia)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Garcia' is not defined
