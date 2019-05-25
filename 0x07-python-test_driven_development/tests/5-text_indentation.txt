@@ -1,0 +1,56 @@
+#doctests for function def text_indentation(text)
+#function that prints a text with 2 new lines after each of these characters: ., ? and :
+
+import function
+
+>>> txt = __import__('5-text_indentation').text_indentation
+
+case 1: empty text
+
+>>> txt()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+case 2: text with no quotes
+
+>>> txt(love)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'love' is not defined
+
+case 3: text inside a set
+
+>>> txt({'text. inside a ? set: '})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 15, in text_indentation
+    raise TypeError('text must be a string')
+TypeError: text must be a string
+
+case 4: text with string operations
+
+>>> txt('text'+'with'+'operation')
+textwithoperation
+
+case 5: no delimiters in text
+
+>>> txt('text str')
+text str
+
+case 6: float number as string
+
+>>> txt('1.2')
+1
+<BLANKLINE>
+2
+
+case 7: passing numbers as text
+
+>>> txt(1.2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 15, in text_indentation
+    raise TypeError('text must be a string')
+TypeError: text must be a string
+
