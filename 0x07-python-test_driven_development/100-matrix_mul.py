@@ -34,7 +34,9 @@ def matrix_mul(m_a, m_b):
         raise TypeError('each row of m_b must should be of the same size')
     if len(m_b) is not len(m_a[0]):
         raise ValueError("m_a and m_b can't be multiplied")
-    A = np.array(m_a)
-    B = np.array(m_b)
-
-    return A.dot(B)
+    result = [[0 for i in range(len(m_b[0]))] for p in range(len(m_a))]
+    for i in range(len(m_a)):
+        for j in range(len(m_b[0])):
+            for k in range(len(m_b)):
+                result[i][j] += m_a[i][k] * m_b[k][j]
+    return result 
