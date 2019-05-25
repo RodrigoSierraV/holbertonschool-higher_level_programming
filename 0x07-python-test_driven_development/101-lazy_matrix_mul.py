@@ -30,9 +30,9 @@ def lazy_matrix_mul(m_a, m_b):
             False in [isinstance(h, float) for k in m_b for h in k]:
         raise TypeError('m_b should contain only integers or floats')
     if False in [len(m_a[0]) is len(m) for m in m_a]:
-        raise TypeError('m_a should contain only integers or floats')
+        raise TypeError('each row of m_a must should be of the same size')
     if False in [len(m_b[0]) is len(n) for n in m_b]:
-        raise TypeError('m_b should contain only integers or floats')
+        raise TypeError('each row of m_b must should be of the same size')
     if len(m_b) is not len(m_a[0]):
         raise ValueError("m_a and m_b can't be multiplied")
     A = np.array(m_a)
