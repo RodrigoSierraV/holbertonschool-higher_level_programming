@@ -51,12 +51,10 @@ class Rectangle:
         """Creates the a string with the representation of the rectangle"""
 
         string = ""
-        if self.__width is not 0 or self.__height is not 0:
+        if self.__width is not 0 and self.__height is not 0:
             for i in range(self.__height):
                 for y in range(self.__width):
                     string += "#"
                 if i < self.__height - 1:
                     string += '\n'
-        else:
-            string += '\n'
         return string
