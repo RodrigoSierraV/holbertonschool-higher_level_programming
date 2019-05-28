@@ -77,7 +77,7 @@ class Rectangle:
         type(self).number_of_instances -= 1
         print('Bye rectangle...')
 
-    def __hash__(self):
+    """def __hash__(self):
         return hash(self.area())
 
     def __lt__(self, other):
@@ -96,7 +96,7 @@ class Rectangle:
         return self.area > other.area
 
     def __ge__(self, other):
-        return self.area >= other.area
+        return self.area >= other.area"""
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -106,5 +106,5 @@ class Rectangle:
         if not isinstance(rect_2, Rectangle):
             raise TypeError('rect_2 must be an instance of Rectangle')
         if rect_1.area() >= rect_2.area():
-            return rect_1.area
-        return rect_2.area
+            return rect_1
+        return rect_2
