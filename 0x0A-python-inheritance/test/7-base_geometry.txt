@@ -1,0 +1,69 @@
+#Test cases for function def integer_validator(self, name, value):
+# of the class BaseGeometry
+
+import module
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> cases = BaseGeometry()
+
+case 0: an int as name passed
+
+>>> cases.integer_validator(2, 8)
+>>>
+
+case 1: an int as name and a char as value passed
+
+>>> cases.integer_validator(2, 'h')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 8, in integer_validator
+    raise TypeError('{} must be an integer'.format(name))
+TypeError: 2 must be an integer
+
+case 2: a list passed as name
+
+>>> cases.integer_validator([2, 3], 8)
+>>>
+
+case 3: a tuple passed as name
+
+>>> cases.integer_validator((2, 3), 8)
+>>>
+
+case 4: a dictionary passed as name
+
+>>> cases.integer_validator({2: 3}, 8)
+>>>
+
+case 5: a dictionary passed as value
+
+>>> cases.integer_validator('h', {2: 3})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 8, in integer_validator
+    raise TypeError('{} must be an integer'.format(name))
+TypeError: h must be an integer
+
+case 6: a name passed as 'name'
+
+>>> cases.integer_validator(h, {2: 3})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'h' is not defined
+
+case 7: a set passed as name
+
+>>> cases.integer_validator({2}, 8)
+>>>
+
+case 8: a boolean passed as name
+
+>>> cases.integer_validator(True, 8)
+>>>
+
+case 9: math operation passed as value
+
+>>> cases.integer_validator('name', 8 + 5)
+>>>
+
