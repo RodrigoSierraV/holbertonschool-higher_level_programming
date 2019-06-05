@@ -3,7 +3,7 @@
 
 import function
 
-MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 
 case 0: a character inside the list
 
@@ -51,6 +51,7 @@ case 5: a dictionary inside the list
 
 case 6: a dictionary and an int inside the list
 
+>>> list = MyList([{'dict': 'inside'}, 8])
 >>> list.print_sorted()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
