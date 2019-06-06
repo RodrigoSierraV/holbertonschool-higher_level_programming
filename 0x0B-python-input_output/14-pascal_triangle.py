@@ -8,8 +8,10 @@ def pascal_triangle(n):
         Return: List of lists"""
     new = []
     if n <= 0:
-        return new
+        return [new]
     new = [1]
+    if n is 1:
+        return [new]
     for i in range(n - 1):
         if i is 0:
             add = new[:1] + new[-1:]
