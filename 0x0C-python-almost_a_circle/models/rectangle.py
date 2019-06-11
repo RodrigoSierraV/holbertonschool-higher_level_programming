@@ -101,7 +101,7 @@ class Rectangle(Base):
                 self.__x = args[3]
             if len(args) == 5:
                 self.__y = args[4]
-        elif len(args) == 0:
+        else:
             if 'id' in kwargs:
                 self.id = kwargs['id']
             if 'width' in kwargs:
