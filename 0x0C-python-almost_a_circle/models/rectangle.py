@@ -23,6 +23,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -34,6 +35,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
+
     @width.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -45,6 +47,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -56,6 +59,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
@@ -79,7 +83,8 @@ class Rectangle(Base):
     def __str__(self):
         """Informal representation of class Rectangle in a string"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.__x,
-            self.__y, self.__width, self.__height)
+                                                       self.__y, self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """Method that assigns an argument to each attribute
