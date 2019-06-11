@@ -6,6 +6,7 @@
 
 """
 import json
+import os
 
 
 class Base:
@@ -80,3 +81,18 @@ class Base:
         dummy = cls(3, 3)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Method that returns a list of instances"""
+        filename = cls.__name__ + '.json'
+        if not os.path.isfile(filename):
+            return []
+        string = ''
+        with open(filename, mode='r', encoding='utf-8') as read_instances:
+            string += read_instances.read()
+        dict_instances = cls.from_json_string(string)
+        list_instances = []
+        for objs in dict_instances:
+            list_instances.append(cls.create(**objs))
+        return list_instances
