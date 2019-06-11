@@ -59,11 +59,24 @@ class Base:
         with open(filename, mode='w', encoding='utf-8') as filew:
             filew.write(text)
 
+    @staticmethod
     def from_json_string(json_string):
         """Static Method that returns the list of the JSON string
            representation json_string.
            Args:
-               json_string: is a string representing a list of dictionaries"""
+               json_string: is a string representing a list of dictionaries
+           Return: list represented by json_string"""
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Class method that returns an instance with all attributes
+           already set.
+           Args:
+                **dictionary: reference to a dictionary with attributes
+           Return: an instance with all attributes from dictionary"""
+        dummy = cls(3, 3)
+        dummy.update(**dictionary)
+        return dummy
