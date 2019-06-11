@@ -7,6 +7,7 @@
 """
 import json
 
+
 class Base:
     """Base class"""
 
