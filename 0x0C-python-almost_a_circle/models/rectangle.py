@@ -91,15 +91,16 @@ class Rectangle(Base):
            Args:
                 *args: variable number of arguments"""
         if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.__width = args[1]
-        if len(args) > 2:
-            self.__height = args[2]
-        if len(args) > 3:
-            self.__x = args[3]
-        if len(args) == 5:
-            self.__y = args[4]
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.__width = args[1]
+            if len(args) > 2:
+                self.__height = args[2]
+            if len(args) > 3:
+                self.__x = args[3]
+            if len(args) == 5:
+                self.__y = args[4]
 
         if len(args) == 0:
             if 'id' in kwargs:
