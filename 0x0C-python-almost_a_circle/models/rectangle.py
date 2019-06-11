@@ -45,7 +45,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    @width.setter
+    @x.setter
     def x(self, value):
         if not isinstance(value, int):
             raise TypeError('x must be an integer')
@@ -56,7 +56,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
-    @width.setter
+    @y.setter
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError('y must be an integer')
@@ -107,3 +107,7 @@ class Rectangle(Base):
                 self.__x = kwargs['x']
             if 'y' in kwargs:
                 self.__y = kwargs['y']
+
+    def to_dictionary(self):
+        """Method that returns the dictionary representation of a Rectangle"""
+        return self.__dict__
