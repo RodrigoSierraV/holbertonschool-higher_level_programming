@@ -6,6 +6,7 @@
 
 """
 
+
 class Base:
     """Base class"""
 
