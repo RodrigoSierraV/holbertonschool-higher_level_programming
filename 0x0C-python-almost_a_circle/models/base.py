@@ -7,6 +7,7 @@
 """
 import json
 
+
 class Base:
     """Base class"""
 
@@ -21,7 +22,7 @@ class Base:
             self.id = self.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """Method that returns the JSON string representation of 
+        """Method that returns the JSON string representation of
            list_dictionaries"""
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
