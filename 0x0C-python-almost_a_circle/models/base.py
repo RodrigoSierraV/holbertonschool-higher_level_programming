@@ -7,6 +7,8 @@
 """
 import json
 import os
+import pickle
+import csv
 
 
 class Base:
@@ -96,3 +98,30 @@ class Base:
         for objs in dict_instances:
             list_instances.append(cls.create(**objs))
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Method that serializesa list of Python objects.
+           Args:
+                list_objs: a list of instances who inherits of Base"""
+        filename = cls.__name__ + '.csv'
+        if list_objs is None:
+            with open(filename, mode='w', encoding='utf-8') as filew:
+                return filew.write('[]')
+        dicts = []
+        for obj in list_objs:
+            dicts.append(cls.to_dictionary(obj))
+        with open(filename, mode='a', encoding='utf-8') as filecsv:
+            writer = csv.writer(filecsv)
+            for obj in dicts:
+                writer.writerow(pickle.dumps(obj))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Method that deserializes a csv file into Python objects"""
+        filename = cls.__name__ + '.csv'
+        if not os.path.isfile(filename):
+            return []
+        list_instances = []
+        with open(filename, mode='r', encoding='utf-8') as filecsv:
+            reader = csv.reader(filecsv)
