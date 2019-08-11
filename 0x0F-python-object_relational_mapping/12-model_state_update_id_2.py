@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""script that lists all State objects from the database hbtn_0e_6_usa 
+"""script that lists all State objects from the database hbtn_0e_6_usa
 """
 import sys
 import sqlalchemy
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.id==2).first()
+    state = session.query(State).filter(State.id == 2).first()
     state.name = 'New Mexico'
     session.commit
 
