@@ -8,7 +8,7 @@ def find_peak(list_of_integers):
 
     peaks = None
     uniq = []
-    for i in range(len(list_of_integers) - 1):
+    for i in range(len(list_of_integers)):
         if list_of_integers[i - 1] < list_of_integers[i] and\
            list_of_integers[i + 1] < list_of_integers[i]:
             peaks = list_of_integers[i]
