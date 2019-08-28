@@ -8,4 +8,4 @@ with urllib.request.urlopen('https://intranet.hbtn.io/status') as resp:
     response = resp.read()
     print('\t- type: {}'.format(type(response)))
     print('\t- content: {}'.format(response))
-    print('\t- utf-8 content: {}'.format(response.decode('utf-8')))
+    print('\t- utf8 content: {}'.format(response.decode('utf-8')))
