@@ -8,5 +8,9 @@ response.
 import urllib.request
 from sys import argv
 
-with urllib.request.urlopen(argv[1]) as resp:
-    print(resp.getheader('X-Request-Id'))
+try:
+
+    with urllib.request.urlopen(argv[1]) as resp:
+        print(resp.getheader('X-Request-Id'))
+except:
+    pass
