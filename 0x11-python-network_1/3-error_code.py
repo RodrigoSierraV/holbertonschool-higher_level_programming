@@ -13,4 +13,4 @@ try:
     with urllib.request.urlopen(argv[1]) as resp:
         print(resp.read().decode('utf-8'))
 except urllib.error.HTTPError as err:
-    print('Error code:', err.code)
+    print('Error code: {}'.format(err.code))
