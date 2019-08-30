@@ -27,6 +27,6 @@ if __name__ == '__main__':
                 for movie in page.get('films'):
                     resp2 = get(movie)
                     print('\t{}'.format(resp2.json().get('title')))
-            nextp = esp.json().get('next')
+            nextp = resp1.json().get('next')
     except:
         pass
