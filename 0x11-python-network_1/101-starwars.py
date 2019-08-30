@@ -22,6 +22,6 @@ if __name__ == '__main__':
             resp1 = get(nextp)
             for page in resp1.json().get('results'):
                 print(page.get('name'))
-            nextp = resp.json().get('next')
+            nextp = resp1.json().get('next')
     except:
         pass
